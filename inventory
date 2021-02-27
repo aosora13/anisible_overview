@@ -1,8 +1,16 @@
-192.168.1.42
-192.168.1.158
-192.168.1.152
+[web_servers]
 192.168.50.129
 192.168.50.130
+
+[db_servers]
+192.168.1.152
+
+[test_servers]
+192.168.1.42 
+192.168.1.158
+
+[file_servers]
+192.168.50.130 
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
