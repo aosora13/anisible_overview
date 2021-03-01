@@ -1,3 +1,5 @@
 apache_package_name: apache2
 apace_servivce: apache2
 php_package_name: libapache2-mod-php
+ssh_users: "aozora aosora13"
+ssh_template_file: ssh_config_ubuntu.j2

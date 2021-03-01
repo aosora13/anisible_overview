@@ -2,3 +2,15 @@
   authorized_key:
     user: aosora13
     key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGlgzSbILCro5GvKmpf4I8kT08rxOoFA6HqbNGM2GG47UcRdfQSaAyw95PNLAPXiVdukYNCNAMEGXe2U2h/E7cqs2D4DGmPWRaH18kfZAn4GkGMJCWFwu5gU+zDeLFfIeR5KGCQkfMUBZ76b1mmD+nMfJbFI3jpL9qoWIoLxyTlQ7xxibMgBKVPGJbPm30KSGhmtAjeNSQa69ckwIfKn3bZWxVRVI68/L3fRhdinIVCZIweJcUqGxEUaS5ouRW/xjY6oFh4V01A7UxtQk5Bqf8ICjfRDbbN5FoFlAWqd6kI1tlSeJzh9wK+kFNxO8lfaTQtv2P3RkGwozEIOizEzgOYGIBM1iKVW3tjQevOZL5l9wNbkiarSgc4lSzqcXP824FR90ataMmYIT0f10REFKTrbLRnqrzAbkvf5H3Xn1WDM7IBmUyR6OewoZpMyQrINUnUPKan0cl+X7DYwxP5ZFbUnYRHThUyONS7D5THEBWkTYzxXBmEWvc0JhXP9sL1k8= aozora@TOMSRYZEN5"
+
+- name: generate sshd_config from template
+  tags: ssh
+  template:
+    src: "{{ ssh_template_file }}"
+    dest: /etc/ssh/ssh_config
+    owner: root
+    group: root
+    mode: 0664
+  notify: restart_sshd
+
+
